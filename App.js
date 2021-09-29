@@ -4,6 +4,7 @@ import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 import Main from './src/components/Main'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+//import BottomTabNavigator from './src/components/TabNavigator'
 
 function HomeScreen({ navigation }) {
   return (
@@ -22,7 +23,7 @@ function HomeScreen({ navigation }) {
           <Button
         title="Log in"
         onPress={() => navigation.navigate('Main')}
-      />
+          />
           </View>
         </View>
       </View> 
@@ -63,8 +64,6 @@ const styles = StyleSheet.create({
     backgroundColor:"#D5E8D4",
     marginTop:12,
     width:250,
-  
-
   },
   text:{
     color:'red',
