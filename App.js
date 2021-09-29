@@ -2,8 +2,12 @@ import * as React from 'react';
 import 'react-native-gesture-handler'
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 import Main from './src/components/Main'
+import Group from './src/components/Group'
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import GroupFunc from './src/components/Group';
+
 //import BottomTabNavigator from './src/components/TabNavigator'
 
 function HomeScreen({ navigation }) {
@@ -77,6 +81,7 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Login" component={HomeScreen} />
         <Stack.Screen name="Main" component={Main}/>
+        <Stack.Screen name="Group" component={Group}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

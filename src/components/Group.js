@@ -15,9 +15,9 @@ function Home({ navigation }) {
   return (
     <ScrollView style={styles.scrollView}>
     <View style={styles.firstBlock}>
-   
-     <ImageBackground source={require('./assets/Group.png')} resizeMode="cover" style={styles.image}  >
-       <Text style={styles.text} onPress={() => navigation.navigate('Group')} >
+    
+     <ImageBackground source={require('./assets/Group.png')} resizeMode="cover" style={styles.image}>
+       <Text style={styles.text}>
          Группы
        </Text>
      </ImageBackground>
@@ -54,7 +54,6 @@ function Home({ navigation }) {
             <Text style={styles.underNewsText2}>Управление оперативных мероприятий инспекции Министерства по налогам и сборам в своем телеграм-канале сообщило о начале проверке маршрутных такси. «Маршрут 1280-ТК (ДС „Уручье-4“....</Text>
           </View>
           <TouchableOpacity
-         
           style={styles.button}>
           <Text>Смотреть</Text>
           </TouchableOpacity>
@@ -76,7 +75,7 @@ function Timetable(){
 function Group() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      
+      <Text>Группы</Text>
     </View>
   );
 }
@@ -114,6 +113,7 @@ function CustomDrawerContent(props) {
     <DrawerContentScrollView {...props}>
       <Image source={require('./assets/logo.png')} style={{height:30,width:200}} {...props}/>
       <DrawerItemList {...props} />
+      
       <DrawerItem
         label="Закрыть меню"
         onPress={() => props.navigation.closeDrawer()}
@@ -121,7 +121,13 @@ function CustomDrawerContent(props) {
     </DrawerContentScrollView>
   );
 }
-
+function img(){
+  return(
+    <View>
+      <Image source={require('./assets/logo.png')}/>
+    </View>
+  )
+}
 const Drawer = createDrawerNavigator();
 
 function MyDrawer() {
@@ -130,7 +136,7 @@ function MyDrawer() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
       >
       <Drawer.Screen name="Главная" component={Home} />
-      <Drawer.Screen name="Список групп" component={Group}/>
+      <Drawer.Screen name="Список групп" component={Group} />
       <Drawer.Screen name="Расписание" component={Timetable}/>
       <Drawer.Screen name="Чат" component={Chat}/>
       <Drawer.Screen name="Преподаватели" component={Mentors}/>
@@ -233,7 +239,7 @@ padding:5,
 //     </Tab.Navigator>
 //   );
 // };
-export default function Main() {
+export default function GroupFunc() {
   return (
      <MyDrawer/>
     
