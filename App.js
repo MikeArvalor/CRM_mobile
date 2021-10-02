@@ -3,7 +3,7 @@ import 'react-native-gesture-handler'
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 import Main from './src/components/Main'
 import Group from './src/components/Group'
-
+import AddGroup  from './src/components/Group/AddGroup';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import GroupFunc from './src/components/Group';
@@ -15,17 +15,17 @@ function HomeScreen({ navigation }) {
     <View style ={styles.container}>
         <View style={styles.firstblockLog}>
           <TextInput style={styles.inputLog}
-          placeholder="Login"
+          placeholder="Логин"
           keyboardType="numeric"
           />
           <TextInput
           style={styles.inputLog}
-          placeholder="Password"
+          placeholder="Пароль"
           secureTextEntry={true}
           />
           <View style={styles.buttonLog}>
           <Button
-        title="Log in"
+        title="Войти"
         onPress={() => navigation.navigate('Main')}
           />
           </View>
@@ -82,6 +82,7 @@ function App() {
         <Stack.Screen name="Login" component={HomeScreen} />
         <Stack.Screen name="Main" component={Main}/>
         <Stack.Screen name="Group" component={Group}/>
+        <Stack.Screen name="AddGroup" component={AddGroup}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

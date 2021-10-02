@@ -13,112 +13,13 @@ import {
   DrawerItem,
   
 } from '@react-navigation/drawer';
-const subject = ["Python", "QA", "Frond-end"]
+
 function Home({ navigation }) {
 
   return (
     <ScrollView style={styles.scrollView}>
     <View style={styles.firstBlock}>
-      <View style={styles.firstBlockLeft}>
-        <Text style={styles.text1}>Группы</Text>
-        <SelectDropdown
-          data={subject}
-          onSelect={(selectedItem, index) => {
-            console.log(selectedItem, index)
-          }}
-          buttonTextAfterSelection={(selectedItem, index) => {
-            return selectedItem
-          }}
-          rowTextForSelection={(item, index) => {
-            return item
-          }}
-        />
-        </View> 
-        <View style={styles.firstBlockRight}>
-          <Text style={styles.text1}>Поиск по номеру группы</Text>
-          <SelectDropdown
-          style={styles.selectdown}
-          width='100'
-          data={subject}
-          onSelect={(selectedItem, index) => {
-            console.log(selectedItem, index)
-          }}
-          buttonTextAfterSelection={(selectedItem, index) => {
-            return selectedItem
-          }}
-          rowTextForSelection={(item, index) => {
-            return item
-          }}
-        />
-        </View>
-        <View style={styles.secondBlock}>
-          <View >
-            <Text style={styles.titleBlock} >Python</Text>
-          </View>
-          <View style={styles.cardSecondBlock}>
-            <View style={styles.cardBlock}  >
-              <Text onPress={() => navigation.navigate('AddGroup')}>Группа №201</Text>
-              <Text>статус - активна</Text>
-              <Text>старт: 01 01 2021</Text>
-              <Text>окончание: 01 04 2021</Text>
-              <Text>состав:10 чел</Text>
-            </View>
-            <View style={styles.cardBlock}>
-              <Text>Группа №201</Text>
-              <Text>статус - активна</Text>
-              <Text>старт: 01 01 2021</Text>
-              <Text>окончание: 01 04 2021</Text>
-              <Text>состав:10 чел</Text>
-            </View>
-            <View style={styles.cardBlock}>
-              <Text>Группа №201</Text>
-              <Text>статус - активна</Text>
-              <Text>старт: 01 01 2021</Text>
-              <Text>окончание: 01 04 2021</Text>
-              <Text>состав:10 чел</Text>
-            </View>
-            <View style={styles.addBlock}>
-            <TouchableOpacity
-              style={styles.addBlockButton}>
-              <Text>Создать группу</Text>
-           </TouchableOpacity>
-            </View>
-          </View>
-        </View>   
-        <View style={styles.secondBlock}>
-          <View >
-            <Text style={styles.titleBlock}>Front-end</Text>
-          </View>
-          <View style={styles.cardSecondBlock}>
-            <View style={styles.cardBlock}>
-              <Text>Группа №201</Text>
-              <Text>статус - активна</Text>
-              <Text>старт: 01 01 2021</Text>
-              <Text>окончание: 01 04 2021</Text>
-              <Text>состав:10 чел</Text>
-            </View>
-            <View style={styles.cardBlock}>
-              <Text>Группа №201</Text>
-              <Text>статус - активна</Text>
-              <Text>старт: 01 01 2021</Text>
-              <Text>окончание: 01 04 2021</Text>
-              <Text>состав:10 чел</Text>
-            </View>
-            <View style={styles.cardBlock}>
-              <Text>Группа №201</Text>
-              <Text>статус - активна</Text>
-              <Text>старт: 01 01 2021</Text>
-              <Text>окончание: 01 04 2021</Text>
-              <Text>состав:10 чел</Text>
-            </View>
-            <View style={styles.addBlock}>
-            <TouchableOpacity
-              style={styles.addBlockButton}>
-              <Text>Создать группу</Text>
-           </TouchableOpacity>
-            </View>
-          </View>
-        </View>  
+      
     </View>
     </ScrollView>
     
@@ -171,7 +72,7 @@ function ProcessingRequest(){
 function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
-      <Image source={require('./assets/logo.png')} style={{height:30,width:200}} {...props}/>
+      {/* <Image source={require('./assets/Group/logo.png')} style={{height:30,width:200}} {...props}/> */}
       <DrawerItemList {...props} />
       
       <DrawerItem
@@ -300,7 +201,7 @@ marginLeft:10,
 //     </Tab.Navigator>
 //   );
 // };
-export default function GroupFunc() {
+export default function AddGroup() {
   return (
      <MyDrawer/>
     
