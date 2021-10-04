@@ -3,10 +3,10 @@ import 'react-native-gesture-handler'
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 import Main from './src/components/Main'
 import Group from './src/components/Group'
-import AddGroup  from './src/components/Group/AddGroup';
+import ViewGroup  from './src/components/ViewGroup';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import GroupFunc from './src/components/Group';
+//import GroupFunc from './src/components/Group';
 
 //import BottomTabNavigator from './src/components/TabNavigator'
 
@@ -82,7 +82,7 @@ function App() {
         <Stack.Screen name="Login" component={HomeScreen} />
         <Stack.Screen name="Main" component={Main}/>
         <Stack.Screen name="Group" component={Group}/>
-        <Stack.Screen name="AddGroup" component={AddGroup}/>
+        <Stack.Screen name="ViewGroup" component={ViewGroup}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

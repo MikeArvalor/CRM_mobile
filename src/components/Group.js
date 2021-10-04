@@ -57,7 +57,7 @@ function Home({ navigation }) {
           </View>
           <View style={styles.cardSecondBlock}>
             <View style={styles.cardBlock}  >
-              <Text onPress={() => navigation.navigate('AddGroup')}>Группа №201</Text>
+              <Text onPress={() => navigation.navigate('ViewGroup')}>Группа №201</Text>
               <Text>статус - активна</Text>
               <Text>старт: 01 01 2021</Text>
               <Text>окончание: 01 04 2021</Text>
