@@ -13,7 +13,7 @@ import {
 
 function Home({ navigation }) {
 
-  return (
+  return (<View>
     <ScrollView style={styles.scrollView}>
     <View style={styles.firstBlock}>
    
@@ -60,10 +60,14 @@ function Home({ navigation }) {
           </TouchableOpacity>
        </View>
      </View>
-     <BottomTabNavigator props={navigation} />
+ 
     </View>
-   
+    
     </ScrollView>
+              
+        <BottomTabNavigator props={navigation} />
+      
+        </View>
     
   );
   
@@ -151,6 +155,19 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     alignItems:"center"
   },
+  tabBlock:{
+    backgroundColor:"#b2b2b2",
+    width:'100%',
+    display:"flex",
+
+    position: 'absolute', 
+    left: 0,
+     right: 0, bottom: 0,
+    flexDirection:"row",
+    justifyContent:"space-between",
+    alignItems:"center",
+
+},
   underNewsText:{
     textAlign:"left",
     justifyContent:"flex-start",

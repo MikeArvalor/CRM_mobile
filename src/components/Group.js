@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, Text, Button,StyleSheet, ImageBackground,TouchableOpacity, ScrollView,Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-
+import BottomTabNavigator from './TabNavigator'
 //import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import SelectDropdown from 'react-native-select-dropdown'
@@ -79,8 +79,8 @@ function Home({ navigation }) {
             </View>
             <View style={styles.addBlock}>
             <TouchableOpacity
-              style={styles.addBlockButton}>
-              <Text>Создать группу</Text>
+              >
+              <Text onPress={()=> navigation.navigate('Добавить группу')}>Создать группу</Text>
            </TouchableOpacity>
             </View>
           </View>
@@ -119,6 +119,7 @@ function Home({ navigation }) {
             </View>
           </View>
         </View>  
+        <BottomTabNavigator props={navigation} />
     </View>
     </ScrollView>
     

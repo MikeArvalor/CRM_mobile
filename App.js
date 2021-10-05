@@ -84,8 +84,7 @@ function App() {
         <Stack.Screen name="Main" component={Main}/>
         <Stack.Screen name="Group" component={Group}/>
         <Stack.Screen name="ViewGroup" component={ViewGroup}/>
-        <Stack.Screen name= "AddGroup" component={AddGroup}/>
-
+        <Stack.Screen name= "Добавить группу" component={AddGroup}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
