@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { View, Text, Button,StyleSheet, ImageBackground,TouchableOpacity, ScrollView,Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-//import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import BottomTabNavigator from './TabNavigator'
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -54,13 +55,14 @@ function Home({ navigation }) {
             <Text style={styles.underNewsText2}>Управление оперативных мероприятий инспекции Министерства по налогам и сборам в своем телеграм-канале сообщило о начале проверке маршрутных такси. «Маршрут 1280-ТК (ДС „Уручье-4“....</Text>
           </View>
           <TouchableOpacity
-         
           style={styles.button}>
           <Text>Смотреть</Text>
           </TouchableOpacity>
        </View>
      </View>
+     <BottomTabNavigator props={navigation} />
     </View>
+   
     </ScrollView>
     
   );
