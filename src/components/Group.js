@@ -17,6 +17,7 @@ const subject = ["Python", "QA", "Frond-end"]
 function Home({ navigation }) {
 
   return (
+    <View>
     <ScrollView style={styles.scrollView}>
     <View style={styles.firstBlock}>
       <View style={styles.firstBlockLeft}>
@@ -119,9 +120,11 @@ function Home({ navigation }) {
             </View>
           </View>
         </View>  
-        <BottomTabNavigator props={navigation} />
+        
     </View>
     </ScrollView>
+    <BottomTabNavigator props={navigation} />
+    </View>
     
   );
   

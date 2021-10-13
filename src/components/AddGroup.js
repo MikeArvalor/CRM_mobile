@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { View, Text, Button,StyleSheet,Icon, ImageBackground,TouchableOpacity, ScrollView,Image } from 'react-native';
+import { useState } from 'react'
+import { View, Text,TextInput, Button,StyleSheet,Icon, ImageBackground,TouchableOpacity, ScrollView,Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-
+import DatePicker from 'react-native-neat-date-picker'
 //import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabNavigator from './TabNavigator'
 import SelectDropdown from 'react-native-select-dropdown'
@@ -16,7 +17,25 @@ import {
   
 const subject = ["Python", "QA", "Frond-end"]
 function Home({ navigation }) {
+  const [showDatePicker, setShowDatePicker] = useState(false)
 
+  const openDatePicker = () => {
+    setShowDatePicker(true)
+  }
+
+
+  const onCancel = () => {
+
+    setShowDatePicker(false)
+  }
+
+  const onConfirm = ( date ) => {
+
+    setShowDatePicker(false)
+    
+   
+    
+  }
   return (
     <View>
       <ScrollView style={styles.scrollView}>
@@ -30,32 +49,77 @@ function Home({ navigation }) {
               <Text style={styles.leftBlockText}>Состав группы</Text>
             </View>
             <View style={styles.rightBlock}>
-            <Text style={styles.leftBlockText}><SelectDropdown
-          data={subject}
-          onSelect={(selectedItem, index) => {
-            console.log(selectedItem, index)
-          }}
-          buttonTextAfterSelection={(selectedItem, index) => {
-            return selectedItem
-          }}
-          rowTextForSelection={(item, index) => {
-            return item
-          }}
-        /></Text>
-              <Text style={styles.leftBlockText}>Дата начала</Text>
-              <Text style={styles.leftBlockText}>Дата окончания</Text>
-              <Text style={styles.leftBlockText}>Преподаватель</Text>
-              <Text style={styles.leftBlockText}>Состав группы</Text>
+            <Text style={styles.leftBlockText}>
+                <SelectDropdown
+                  data={subject}
+                  onSelect={(selectedItem, index) => {
+                    console.log(selectedItem, index)
+                  }}
+                  buttonTextAfterSelection={(selectedItem, index) => {
+                    return selectedItem
+                  }}
+                  rowTextForSelection={(item, index) => {
+                    return item
+                  }}
+                /></Text>
+              <Text style={styles.leftBlockText}>
+                <View>
+                <Button title={'Выбрать дату'} onPress={openDatePicker}/>
+                <DatePicker
+                  isVisible={showDatePicker}
+                  mode={'single'}
+                  onCancel={onCancel}
+                  onConfirm={onConfirm}
+                />
+              </View>
+              </Text>
+              <View style={styles.leftBlockText}>
+              <View>
+                <Button title={'Выбрать дату'} onPress={openDatePicker}/>
+                <DatePicker
+                  isVisible={showDatePicker}
+                  mode={'single'}
+                  onCancel={onCancel}
+                  onConfirm={onConfirm}
+                />
+              </View>
+              <TextInput
+                style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                value={onConfirm}
+              />
+              </View>
+              <Text style={styles.leftBlockText}>
+                <SelectDropdown
+                  data={subject}
+                  onSelect={(selectedItem, index) => {
+                    console.log(selectedItem, index)
+                  }}
+                  buttonTextAfterSelection={(selectedItem, index) => {
+                    return selectedItem
+                  }}
+                  rowTextForSelection={(item, index) => {
+                    return item
+                  }}
+                /></Text>
+              <Text style={styles.leftBlockText}>10 человек</Text>
             </View>
           </View>
         </View>
-      </ScrollView>   
+        
+        <View style={styles.buttonBlock}>
+          <TouchableOpacity
+          style={styles.buttonPrev}>
+            <Text>Отмена</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonNext}>
+            <Text>Создать группу</Text>
+          </TouchableOpacity>
+        </View>   
+        
+      </ScrollView>
       <BottomTabNavigator props={navigation} />
     </View>
-    
-    
-  );
-  
+  ); 
 }
 function Timetable(){
     return(
@@ -139,6 +203,30 @@ const styles = StyleSheet.create({
   firstBlock:{
 
   },
+  buttonBlock:{
+    
+   marginBottom:100,
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-between",
+    marginLeft:20,
+    marginRight:20
+  },
+  buttonPrev:{
+    width:170,
+    justifyContent:"center",
+    alignItems:"center",
+    backgroundColor:"#D5E8D4",
+    padding:10
+  },
+  buttonNext:{
+    width:170,
+    justifyContent:"center",
+    alignItems:"center",
+    backgroundColor:"#D5E8D4",
+    padding:10
+ 
+  },
   cardBlock:{
     display:"flex",
     flex:1,
@@ -149,7 +237,7 @@ const styles = StyleSheet.create({
   },
   leftBlockText:{
     fontSize:20,
-    marginBottom:40
+    marginBottom:50
   },
 
 });
